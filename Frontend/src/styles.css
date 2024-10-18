@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+
+    margin: 0;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255); 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(236, 236, 236); 
+  }
+
+  @keyframes rolateIn{
+
+    0%{
+      transform: rotate(0deg);  
+    }
+    100%{
+
+        transform: rotate(360deg);
+    }
+}
+
+

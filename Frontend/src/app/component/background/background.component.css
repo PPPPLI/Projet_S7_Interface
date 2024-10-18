@@ -1,0 +1,47 @@
+#backgroundDiv{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    z-index: -1;
+    margin: 0;
+}
+
+.backDiv{
+
+    min-height: 100vh;
+    min-width: 20vw;
+    background-color: rgb(238, 238, 238);
+    animation: riseUp 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+    opacity: 0;
+}
+
+@keyframes riseUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.backDiv:first-child {
+    animation-delay: 1s;
+}
+
+.backDiv:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.backDiv:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.backDiv:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.backDiv:nth-child(5) {
+    animation-delay: 0.2s;
+}

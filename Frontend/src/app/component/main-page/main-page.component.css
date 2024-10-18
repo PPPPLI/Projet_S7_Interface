@@ -1,0 +1,84 @@
+#header{
+    position: absolute;
+    z-index: 3;
+    animation: fadeIn 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes fadeIn {
+
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50%{
+
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#sideBannerDiv{
+    position: absolute;
+    min-height: 100vh;
+    min-width: 20vw;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: first baseline;
+    z-index: 10;
+    background-color: rgb(238, 238, 238);
+    box-shadow: -2px 0 10px 2px rgb(224, 224, 224);
+    animation: toLeft 1s forwards cubic-bezier(0.23, 1, 0.320, 1);
+    transition: all 1s;
+}
+
+
+@keyframes toLeft{
+
+    0%{
+
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100%{
+
+        transform: translateX(0);
+        opacity: 100;
+    }
+}
+
+#bannerContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40vh;
+    transform: translateY(-50%);
+    font-size: x-large;
+    color: rgb(46, 138, 61);
+}
+
+.login{
+
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login:hover{
+
+    color: rgb(223, 128, 128);
+}
+
+#crossIcon{
+
+    cursor: pointer;
+    margin-top: 20%;
+    animation: rolateIn 1s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-delay: 0.5s;
+}

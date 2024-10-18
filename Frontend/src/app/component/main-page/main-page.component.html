@@ -1,0 +1,22 @@
+@if (showContent) {
+
+    <app-header-banner id="header" (eventEmitter)="showBanner($event)"></app-header-banner>
+}
+
+@if(isShowBanner){
+
+    <div id="sideBannerDiv">
+    
+        <img src="/cross.png" alt="cross" width="25px" id="crossIcon" (click)="bannerControl()">
+    
+        <div id="bannerContent" >
+            <div class="login" routerLink="/home">Home</div>
+            <div class="login" routerLink="/login">Sign In</div>
+            <div class="login" routerLink="/register">Sign Up</div>
+        </div>
+    </div>
+}
+
+
+
+

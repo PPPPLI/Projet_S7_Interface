@@ -1,0 +1,36 @@
+
+<app-background></app-background>
+
+@if(showComponent){
+
+    <div id="mainRegister">
+        <div id="registerBox">
+            <div id="returnBox" (mouseover)="move()" (mouseleave)="init()" routerLink="/">
+                <img src="/arrow.png" width="20px" height="20px" alt="arrow" id="arrow" [style]="doReturn?'transform: translateX(-10px);':''">
+                <span id="returnText">Return</span>
+            </div>
+            <div id="formDiv">
+                <form [formGroup]="registerForm" action="" method="post">
+                    <fieldset>
+                        <legend>LOGIN ACCOUNT</legend>
+                        <div class="formBox">
+                            <span>Username</span>
+                            <input type="text" formControlName="userName" (focus)="removeWarning()">
+                        </div>
+                        
+                        <div class="formBox">
+                            <span>Password</span>
+                            <input type="password" formControlName="pwd"  (focus)="removeWarning()">
+                        </div>
+                        
+                    </fieldset>
+                    <div id="footDiv">
+                        <!--<span>Error</span> -->
+                        <input type="submit" value="Submit" id="submit" (click)="sendRegistration($event)">
+                    </div>
+                    <div id="warningMsg" *ngIf="doWarning">{{warningMsg}}</div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,143 @@
+#mainRegister{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: 100vw;
+    
+}
+
+#registerBox{
+
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+legend{
+
+    text-align: center;
+    font-weight: 800;
+    font-size: larger;
+    padding: 0 10px;
+    color: rgb(52, 111, 52);
+}
+
+.formBox{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+}
+
+#returnBox{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+#arrow{
+
+    margin-right: 10px;
+    transition: 1.5s;
+}
+
+#returnText{
+
+    font-size: larger;
+    color: rgb(52, 111, 52);
+    
+}
+
+#returnText:hover{
+
+    color: grey;
+}
+
+#pwdBox{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#formDiv{
+    width: 50%;
+    margin-top: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+fieldset{
+    border-radius: 5px;
+}
+
+input[type='text'],input[type='password']{
+
+    width: 70%;
+    border-radius: 5px;
+    height: 20px
+}
+
+input[type='password']{
+
+    margin-bottom: 20px;
+}
+
+#submit{
+
+    margin-left: auto;
+    font-size: medium;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgb(245, 243, 243);
+    border: 1px solid gray;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+    transition: 0.5s;
+}
+
+#submit:hover{
+
+    background-color: rgb(157, 201, 170);
+    color: white;
+}
+
+
+span{
+
+    font-weight: 500;
+}
+
+#footDiv{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#warningMsg{
+
+    color: red;
+    position: relative;
+}
