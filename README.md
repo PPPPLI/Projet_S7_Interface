@@ -257,7 +257,7 @@ EXPOSE 80
   
 ## **Docker Hub**
 
-All of the containers in this project are pushed to Docker Hub
+All of the images in this project are pushed to Docker Hub
 ![image](https://github.com/user-attachments/assets/5a37a040-50a6-46f8-a89a-c4678e3cdd7e)
 ![image](https://github.com/user-attachments/assets/a59bcc71-090c-435a-b87e-7a19cde00e6c)
 
