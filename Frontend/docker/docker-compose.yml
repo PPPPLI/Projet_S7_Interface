@@ -1,11 +1,10 @@
-services:
-  frontend:
-    build:
+services:  
+  frontend: 
+    build: # Build the image by Dockerfile
       context: .
       dockerfile: Dockerfile
-    ports:
+    ports: # Port mapping to 80
       - "80:80"
-    volumes:
+    volumes:  # Volume binding for main html page and nginx configuration file 
       - ./dist/frontend:/usr/share/nginx/html
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
-
