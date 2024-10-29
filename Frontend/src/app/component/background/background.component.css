@@ -1,17 +1,20 @@
 #backgroundDiv{
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: row;
     z-index: -1;
     margin: 0;
+    overflow: hidden;
+    min-width: 1000px;
 }
 
 .backDiv{
 
+    width: 20vw;
     min-height: 100vh;
-    min-width: 20vw;
+    min-width: 200px;
     background-color: rgb(238, 238, 238);
-    animation: riseUp 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+    animation: riseUp 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
     opacity: 0;
 }
 

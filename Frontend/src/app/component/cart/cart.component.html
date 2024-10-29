@@ -1,0 +1,72 @@
+<app-background></app-background>
+@if (order.orderProducts.length > 0) {
+    <div class="collapseDiv" id="titleDiv">
+        <span class="infoDiv">Current Order</span>
+        <span class="infoDiv">{{order.orderDate}}</span>
+        @if(order.isPaid){
+            <span class="infoDiv">Paid</span>
+            <span class="infoDiv"></span>
+        }@else {
+            <span id="unpaidText" class="infoDiv">Unpaid</span>
+            <button id="payment"  class="infoDiv" (click)="payOrder()">Buy</button>
+        }
+        
+    </div>
+
+
+    <div class="collapseDiv" id="products">
+
+        @for (item of order.orderProducts; track $index) {
+
+            <div [id]="'product' + $index" class="product">
+                <div class="infoDiv"><span>{{item.product.productId | slice:0:7}}</span></div>
+                <div class="infoDiv"><span>{{item.product.productDescription}}</span></div>
+                <div class="infoDiv"><span>{{item.product.productPrice | currency:"EUR"}}</span></div>
+                <div class="infoDiv"><span>{{item.product.productQuantity}}</span></div>
+                <div class="infoDiv"><img [src]="baseUrl + item.product.productUrl" width="50px" height="50px"  class="titleClass"></div>
+            </div>
+        }
+
+        @if (order.orderProducts.length > 0) {
+            <div class="product" id="priceDiv">
+                <div class="infoDiv"><span>Total: </span></div>
+                <div class="infoDiv"></div>
+                <div class="infoDiv"></div>
+                <div class="infoDiv"><span>{{totalPrice | currency:"EUR"}}</span></div>
+            </div>
+        }
+    </div>
+}
+
+@for (ele of orderList; track $index) {
+
+    <div class="collapseDiv" id="titleDiv" (click)="toggleDropdown($index,$event)">
+        <span class="infoDiv" (click)="toggleDropdown($index,$event)">{{ele.orderId | slice:0:7}}</span>
+        <span class="infoDiv" (click)="toggleDropdown($index,$event)">{{ele.orderDate}}</span>
+        <span class="infoDiv" (click)="toggleDropdown($index,$event)">{{paidTotalPriceList[$index]}}</span>
+        <img id="collapseBtn" class="infoDiv" src="/collapse.png" (click)="toggleDropdown($index,$event)">
+        
+        
+    </div>
+
+    
+
+        <div class="collapseDiv paidProducts" [id]="'paidProduct'+$index">
+
+            @for (item of ele.orderProducts; track $index) {
+    
+                <div [id]="'product' + $index" class="product">
+                    <div class="infoDiv"><span>{{item.product.productId | slice:0:7}}</span></div>
+                    <div class="infoDiv"><span>{{item.product.productDescription}}</span></div>
+                    <div class="infoDiv"><span>{{item.product.productPrice | currency:"EUR"}}</span></div>
+                    <div class="infoDiv"><span>{{item.quantity}}</span></div>
+                    <div class="infoDiv"><img [src]="baseUrl + item.product.productUrl" width="50px" height="50px"  class="titleClass"></div>
+                </div>
+            }
+        </div>
+
+}
+
+
+
+

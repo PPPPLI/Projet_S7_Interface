@@ -1,0 +1,121 @@
+.collapseDiv{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 700;
+    align-items: center;
+    width: 70vw;
+    left: 50%;
+    top: 30vh;
+    transform: translateX(-50%);
+    min-width: 1100px;
+    background-color: rgb(230, 230, 230);
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+#titleDiv{
+    box-sizing: border-box;
+    padding: 0 20px ;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+.paidProducts{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    max-height: 0;
+    opacity: 0;
+    background-color:  rgb(238, 238, 238);
+    transition: all 0.5s ease;
+}
+
+.paidProducts.expanded {
+    opacity: 1;
+    max-height: 1000px; 
+}
+
+#products{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color:  rgb(238, 238, 238);
+    max-height: fit-content;
+    transition: all 1s ease;
+}
+
+#payment{
+
+    width: 10%;
+    margin: 5px 0;
+    box-sizing: border-box;
+    background-color: rgb(104, 191, 136);
+    font-size: large;
+    padding: 5px 5px;
+    font-weight: 600;
+    transition: all 1s ease;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover{
+
+        background-color: rgb(238, 238, 238);
+    }
+}
+
+
+
+#collapseBtn{
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.product{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.product:hover{
+
+    background-color: rgb(230, 230, 230);
+
+}
+
+.infoDiv{
+
+    text-align: center;
+    width: 25%;
+    cursor: pointer;
+
+}
+
+#unpaidText{
+
+    color: red;
+}
+
+#collapseBtn{
+
+    width: 15px;
+}
+
+#priceDiv{
+    border-top: 1px black solid;
+    font-size: large;
+    font-weight: 600;
+}

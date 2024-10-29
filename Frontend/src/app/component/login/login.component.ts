@@ -1,11 +1,13 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { HttpHeaders } from '@angular/common/http';
 import { BackgroundComponent } from '../background/background.component';
 import RequestService from '../../service/getRequest.service';
+import { UserService } from '../../service/user.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -26,7 +28,9 @@ export class LoginComponent implements OnInit{
     emiter = new EventEmitter()
 
     constructor(private formBuilder:FormBuilder,
-                private router:Router,private clientRequest:RequestService){}
+                private router:Router,private clientRequest:RequestService,
+                private userService:UserService
+            ){}
 
     registerForm = this.formBuilder.group({
         userName : ['',[Validators.required,Validators.minLength(3)]],
@@ -71,6 +75,15 @@ export class LoginComponent implements OnInit{
                 console.log(response.body)
 
                 localStorage.setItem("token",JSON.stringify(response.body))
+                localStorage.setItem("receiveDate", JSON.stringify(new Date()))
+                localStorage.setItem("userName",formValues.userName!)
+
+                this.userService.userRecoverModel({
+
+                    userName: formValues.userName!,
+                    isLogged:true
+                })
+
                 formValues.pwd = "";
                 formValues.userName="";
                 this.doWarning = false;
@@ -95,5 +108,6 @@ export class LoginComponent implements OnInit{
 
         
     }
+
 }
 

@@ -1,7 +1,10 @@
 header{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    min-width: 100vw;
+    justify-content: flex-end;
+    width: 100vw;
+    min-width: 1000px;
     min-height: 20vh;
     border-bottom: 1px solid rgb(0, 0, 0);
 }
@@ -35,8 +38,45 @@ header{
 
 
 #loginImg{
-    position: absolute;
     right: 0;
     margin-right: 50px;
     cursor: pointer;
+}
+
+#cartDiv{
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translateY(-4%);
+    width: 35px;
+    min-height: 20vh;
+    margin-right: 5vw;
+}
+
+#iconDiv{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cartImg{
+
+    position: absolute;
+    cursor: pointer;
+
+}
+
+#artcleNum{
+
+    position: absolute;
+    font-size: large;
+    font-weight: 600;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%,-25%);
 }

@@ -1,0 +1,138 @@
+span{
+
+    cursor: default;
+}
+.articleDiv{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.imgDiv{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    
+}
+
+.titleDiv{
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.productTitle{
+
+    position: absolute;
+    bottom: 5%;
+    min-width: 100%;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0.3);
+    font-size: large;
+    letter-spacing: 1.5px;
+    animation: textUp 2s forwards;
+}
+
+.infoDiv{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.titleClass{
+
+    cursor: pointer;
+}
+
+
+@keyframes textUp {
+
+    0%{
+        max-height: 0;
+    }
+
+    100%{
+
+        max-height: 100%;
+    }
+    
+}
+
+.orderDiv{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+    width: 20vw;
+    min-width: 250px;
+}
+
+.addBtn{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+    background-color: rgb(102, 172, 131);
+    color: white;
+    transition: 1s all;
+}
+
+.addBtn:hover{
+    background-color:  rgb(238, 238, 238);
+    color: black;
+}
+
+
+.incrementBtn{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0 5px;
+    font-weight: 600;
+    margin-left: 10px;
+    min-width: 20px;
+    cursor: pointer;
+}
+
+.incrementBtn:hover{
+
+    color: red;
+}
+
+.takenCount{
+
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0 5px;
+    margin-left: 10px;
+}
+
+.countDiv{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.description{
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

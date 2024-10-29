@@ -1,0 +1,31 @@
+<div class="articleDiv">
+    <div class="imgDiv">
+        <div class="titleDiv">
+
+            <img [src]="baseUrl + product.productUrl" width="200px" height="200px" (mouseenter)="showTitle()" (mouseleave)="hideTitle()" class="titleClass">
+
+            @if(titleIsShowed){
+                
+                <span class="titleClass productTitle"  (mouseenter)="showTitle()"  (mouseleave)="hideTitle()" >{{product.productName}}</span>
+            }
+
+        </div>
+
+        <div class="infoDiv">
+            <span class="description" >{{product.productDescription}}</span>
+            <span>-</span>
+            <span>{{product.productPrice| currency:"EUR"}}</span>
+        </div>
+
+        <div class="orderDiv">
+            <div>
+                <span class="incrementBtn" (click)="increment()">+</span>
+                <span class="takenCount">{{takenNum}}</span>
+                <span> / </span>
+                <span>{{product.productQuantity - totalNum}}</span>
+                <span class="incrementBtn" (click)="decrement()">-</span>
+            </div>
+            <span class="orderClass addBtn" (click)="addArticle()">Ajouter</span>
+        </div>
+    </div>
+</div>

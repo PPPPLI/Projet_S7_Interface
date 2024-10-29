@@ -1,0 +1,14 @@
+<app-background></app-background>
+
+@if(isShow){
+
+    <div  id="productsDiv">
+        @for (item of products; track $index) {
+    
+            <app-article [product]="item"></app-article>
+        }
+    
+    </div>
+
+}
+

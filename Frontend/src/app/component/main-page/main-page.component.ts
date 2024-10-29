@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { HeaderBannerComponent } from '../header-banner/header-banner.component';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-main-page',
@@ -11,10 +12,11 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 export class MainPageComponent implements OnInit{
 
-
+    constructor(private userService:UserService, private router:Router){}
 
     showContent:boolean = false
     isShowBanner:boolean = false
+
 
     ngOnInit(): void {
         
@@ -37,6 +39,27 @@ export class MainPageComponent implements OnInit{
 
 
         this.isShowBanner = !this.showBanner;
+
+    }
+
+    logOut(){
+
+        let res = confirm("Want to Log out ?")
+
+        if(res){
+
+            localStorage.clear()
+            this.userService.userRecoverModel(
+    
+                {
+                    userName: "",
+                    isLogged: false
+                }
+            )
+    
+            this.bannerControl()
+            this.router.navigateByUrl("/")
+        }
 
     }
 

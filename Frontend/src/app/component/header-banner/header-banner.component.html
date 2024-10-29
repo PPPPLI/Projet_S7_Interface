@@ -3,8 +3,12 @@
         <img src="/logo.png" width="110px" id="logo" alt="logo" (click)="backToMain()">
         <span class="logo" id="title">Grocery Shop</span>
     </div>
-    
-    <div>
+
+    <div id="iconDiv">
+        <div id="cartDiv" routerLink="/cart">
+            <img src="/cart.png" width="100%" alt="cart" id="cartImg">
+            <span id="artcleNum">{{artcleNum}}</span>
+        </div>
         <img src="/Capture.PNG" width="35px" alt="login" id="loginImg" (click)="showBanner()">
     </div>
 </header>

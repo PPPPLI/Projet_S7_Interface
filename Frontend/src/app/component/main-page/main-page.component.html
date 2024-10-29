@@ -10,9 +10,10 @@
         <img src="/cross.png" alt="cross" width="25px" id="crossIcon" (click)="bannerControl()">
     
         <div id="bannerContent" >
-            <div class="login" routerLink="/home">Home</div>
-            <div class="login" routerLink="/login">Sign In</div>
-            <div class="login" routerLink="/register">Sign Up</div>
+            <div class="login" routerLink="/home"  (click)="bannerControl()">Home</div>
+            <div class="login" routerLink="/login"  (click)="bannerControl()">Sign In</div>
+            <div class="login" routerLink="/register"  (click)="bannerControl()">Sign Up</div>
+            <div class="login" (click)="logOut()">Log Out</div>
         </div>
     </div>
 }
